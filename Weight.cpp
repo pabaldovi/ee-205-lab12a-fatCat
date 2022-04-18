@@ -120,6 +120,8 @@ Weight::UnitOfWeight Weight::getWeightUnit() const noexcept {
 void Weight::setWeight(float newWeight) {
     assert(isWeightValid(newWeight));
     weight = newWeight;
+    if (!bIsKnown)
+        bIsKnown = true;
 }
 
 void Weight::setWeight(float newWeight, Weight::UnitOfWeight weightUnits) {
@@ -221,8 +223,10 @@ float Weight::convertWeight(float fromWeight, Weight::UnitOfWeight fromUnit, Wei
 }
 
 void Weight::setMaxWeight(float newMaxWeight) {
+    assert(!hasMaxWeight());
     assert(isWeightValid(newMaxWeight));
     maxWeight = newMaxWeight;
+    bHasMax = true;
 }
 
 std::ostream& operator<<( ostream& lhs_stream
