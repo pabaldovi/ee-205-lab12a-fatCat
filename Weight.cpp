@@ -57,8 +57,7 @@ Weight::Weight(Weight::UnitOfWeight newUnitOfWeight) noexcept {
 Weight::Weight(float newWeight, Weight::UnitOfWeight newUnitOfWeight) {
     bIsKnown = true;
     bHasMax = false;
-    unitOfWeight = newUnitOfWeight;
-    setWeight(newWeight);
+    setWeight(newWeight, newUnitOfWeight);
     maxWeight = Weight::UNKNOWN_WEIGHT;
     assert(validate());
 }
