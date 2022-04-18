@@ -12,6 +12,8 @@
 #pragma once
 
 
+#include <string>
+
 class Weight {
     public:
         /*public types*/
@@ -47,5 +49,15 @@ class Weight {
         static float fromSlugToPound(float slug) noexcept;
         static float fromPoundToSlug(float pound) noexcept;
         static float convertWeight(float fromWeight, UnitOfWeight fromUnit, UnitOfWeight toUnit) noexcept;
+
+        /*static public attributes*/
+        static const float UNKNOWN_WEIGHT;
+        static const float KILOS_IN_A_POUND;
+        static const float SLUGS_IN_A_POUND;
+        static const std::string POUND_LABEL;
+        static const std::string KILO_LABEL;
+        static const std::string SLUG_LABEL;
+
+
 
 };
