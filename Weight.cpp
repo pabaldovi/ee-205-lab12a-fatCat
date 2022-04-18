@@ -152,3 +152,8 @@ float Weight::convertWeight(float fromWeight, Weight::UnitOfWeight fromUnit, Wei
     }
     return toValue;
 }
+
+void Weight::setMaxWeight(float newMaxWeight) {
+    assert(isWeightValid(newMaxWeight));
+    maxWeight = newMaxWeight;
+}
