@@ -36,10 +36,10 @@ Weight::Weight() noexcept {
 }
 
 Weight::Weight(float newWeight) {
-    bIsKnown = true;
     bHasMax = false;
     unitOfWeight = POUND;
     setWeight(newWeight);
+    bIsKnown = true;
     maxWeight = Weight::UNKNOWN_WEIGHT;
     assert(validate());
 }
@@ -51,41 +51,40 @@ Weight::Weight(Weight::UnitOfWeight newUnitOfWeight) noexcept {
     weight =  Weight::UNKNOWN_WEIGHT;
     maxWeight = Weight::UNKNOWN_WEIGHT;
     assert(validate());
-
 }
 
 Weight::Weight(float newWeight, Weight::UnitOfWeight newUnitOfWeight) {
-    bIsKnown = true;
     bHasMax = false;
     setWeight(newWeight, newUnitOfWeight);
+    bIsKnown = true;
     maxWeight = Weight::UNKNOWN_WEIGHT;
     assert(validate());
 }
 
 Weight::Weight(float newWeight, float newMaxWeight) {
-    bIsKnown = true;
-    bHasMax = true;
     unitOfWeight = POUND;
     setWeight(newWeight);
+    bIsKnown = true;
     setMaxWeight(newMaxWeight);
+    bHasMax = true;
     assert(validate());
 }
 
 Weight::Weight(Weight::UnitOfWeight newUnitOfWeight, float newMaxWeight) {
     bIsKnown = false;
-    bHasMax = true;
     unitOfWeight = newUnitOfWeight;
     weight =  Weight::UNKNOWN_WEIGHT;
     setMaxWeight(newMaxWeight);
+    bHasMax = true;
     assert(validate());
 }
 
 Weight::Weight(float newWeight, Weight::UnitOfWeight newUnitOfWeight, float newMaxWeight) {
-    bIsKnown = true;
-    bHasMax = true;
     unitOfWeight = newUnitOfWeight;
     setWeight(newWeight);
+    bIsKnown = true;
     setMaxWeight(newMaxWeight);
+    bHasMax = true;
     assert(validate());
 }
 
@@ -223,7 +222,7 @@ float Weight::convertWeight(float fromWeight, Weight::UnitOfWeight fromUnit, Wei
 }
 
 void Weight::setMaxWeight(float newMaxWeight) {
-    assert(!hasMaxWeight());
+//    assert(!hasMaxWeight());
     assert(isWeightValid(newMaxWeight));
     maxWeight = newMaxWeight;
     bHasMax = true;
