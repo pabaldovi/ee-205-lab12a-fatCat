@@ -109,3 +109,46 @@ Weight &Weight::operator+=(float rhs_addToWeight) {
     weight += rhs_addToWeight;
     return *this;
 }
+
+float Weight::fromKilogramToPound(float kilogram) noexcept {
+    return kilogram / KILOS_IN_A_POUND;
+}
+
+float Weight::fromPoundToKilogram(float pound) noexcept {
+    return pound * KILOS_IN_A_POUND;
+}
+
+float Weight::fromSlugToPound(float slug) noexcept {
+    return slug / SLUGS_IN_A_POUND;
+}
+
+float Weight::fromPoundToSlug(float pound) noexcept {
+    return pound * SLUGS_IN_A_POUND;
+}
+
+float Weight::convertWeight(float fromWeight, Weight::UnitOfWeight fromUnit, Weight::UnitOfWeight toUnit) noexcept {
+    float commonValue, toValue;
+    switch (fromUnit) {
+        case POUND:
+            commonValue = fromWeight;
+            break;
+        case KILO:
+            commonValue = fromKilogramToPound(fromWeight);
+            break;
+        case SLUG:
+            commonValue = fromSlugToPound(fromWeight);
+            break;
+    }
+    switch (toUnit) {
+        case POUND:
+            toValue = commonValue;
+            break;
+        case KILO:
+            toValue = fromPoundToKilogram(commonValue);
+            break;
+        case SLUG:
+            toValue = fromPoundToSlug(commonValue);
+            break;
+    }
+    return toValue;
+}
