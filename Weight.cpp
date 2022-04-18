@@ -91,11 +91,15 @@ Weight::Weight(float newWeight, Weight::UnitOfWeight newUnitOfWeight, float newM
 }
 
 bool Weight::isWeightKnown() const noexcept {
-    return weight == UNKNOWN_WEIGHT;
+    if (weight == UNKNOWN_WEIGHT)
+        return false;
+    return true;
 }
 
 bool Weight::hasMaxWeight() const noexcept {
-    return maxWeight == UNKNOWN_WEIGHT;
+    if (maxWeight == UNKNOWN_WEIGHT)
+        return false;
+    return true;
 }
 
 float Weight::getWeight() const noexcept {
@@ -126,7 +130,7 @@ void Weight::setWeight(float newWeight, Weight::UnitOfWeight weightUnits) {
 }
 
 bool Weight::isWeightValid(float checkWeight) const noexcept {
-    assert(checkWeight > 0);
+    assert(checkWeight > 0 || checkWeight == Weight::UNKNOWN_WEIGHT);
     if (bHasMax) {
         assert(checkWeight <= maxWeight);
     }
