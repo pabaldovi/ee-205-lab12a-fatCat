@@ -26,6 +26,70 @@ static const string POUND_LABEL = "Pound";
 static const string KILO_LABEL = "Kilo";
 static const string SLUG_LABEL = "Slug";
 
+Weight::Weight() noexcept {
+    bIsKnown = false;
+    bHasMax = false;
+    unitOfWeight = POUND;
+    weight =  Weight::UNKNOWN_WEIGHT;
+    maxWeight = Weight::UNKNOWN_WEIGHT;
+    assert(validate());
+}
+
+Weight::Weight(float newWeight) {
+    bIsKnown = true;
+    bHasMax = false;
+    unitOfWeight = POUND;
+    setWeight(newWeight);
+    maxWeight = Weight::UNKNOWN_WEIGHT;
+    assert(validate());
+}
+
+Weight::Weight(Weight::UnitOfWeight newUnitOfWeight) noexcept {
+    bIsKnown = false;
+    bHasMax = false;
+    unitOfWeight = newUnitOfWeight;
+    weight =  Weight::UNKNOWN_WEIGHT;
+    maxWeight = Weight::UNKNOWN_WEIGHT;
+    assert(validate());
+
+}
+
+Weight::Weight(float newWeight, Weight::UnitOfWeight newUnitOfWeight) {
+    bIsKnown = true;
+    bHasMax = false;
+    unitOfWeight = newUnitOfWeight;
+    setWeight(newWeight);
+    maxWeight = Weight::UNKNOWN_WEIGHT;
+    assert(validate());
+}
+
+Weight::Weight(float newWeight, float newMaxWeight) {
+    bIsKnown = true;
+    bHasMax = true;
+    unitOfWeight = POUND;
+    setWeight(newWeight);
+    setMaxWeight(newMaxWeight);
+    assert(validate());
+}
+
+Weight::Weight(Weight::UnitOfWeight newUnitOfWeight, float newMaxWeight) {
+    bIsKnown = false;
+    bHasMax = true;
+    unitOfWeight = newUnitOfWeight;
+    weight =  Weight::UNKNOWN_WEIGHT;
+    setMaxWeight(newMaxWeight);
+    assert(validate());
+}
+
+Weight::Weight(float newWeight, Weight::UnitOfWeight newUnitOfWeight, float newMaxWeight) {
+    bIsKnown = true;
+    bHasMax = true;
+    unitOfWeight = newUnitOfWeight;
+    setWeight(newWeight);
+    setMaxWeight(newMaxWeight);
+    assert(validate());
+}
+
 bool Weight::isWeightKnown() const noexcept {
     return weight == UNKNOWN_WEIGHT;
 }
