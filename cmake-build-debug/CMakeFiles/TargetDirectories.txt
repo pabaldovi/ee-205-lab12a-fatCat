@@ -1,0 +1,3 @@
+/tmp/tmp.tGrj6CK830/cmake-build-debug/CMakeFiles/ee_205_lab12a_fatCat.dir
+/tmp/tmp.tGrj6CK830/cmake-build-debug/CMakeFiles/edit_cache.dir
+/tmp/tmp.tGrj6CK830/cmake-build-debug/CMakeFiles/rebuild_cache.dir
