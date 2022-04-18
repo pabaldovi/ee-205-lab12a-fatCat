@@ -16,7 +16,7 @@ class Weight {
     public:
         /*public types*/
 
-        enum UnitofWeight {POUND, KILO, SLUG};
+        enum UnitOfWeight {POUND, KILO, SLUG};
 
         /*public member functions*/
 
@@ -41,5 +41,5 @@ class Weight {
         void dump() const noexcept;
         bool operator== (const Weight &rhs_Weight) const;
         bool operator< (const Weight &rhs_Weight) const;
-        Weight & 	operator+= (float rhs_addToWeight);
+        Weight &operator+= (float rhs_addToWeight);
 };
