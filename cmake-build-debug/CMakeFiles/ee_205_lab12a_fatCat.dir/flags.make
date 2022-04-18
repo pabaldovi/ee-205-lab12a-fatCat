@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/tmp/tmp.tGrj6CK830/.
+CXX_INCLUDES = 
 
 CXX_FLAGS = -g -std=gnu++14
 

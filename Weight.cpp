@@ -19,12 +19,12 @@ using namespace std;
 
 #define FORMAT_LINE(className, member) cout << setw(8) << (className) << setw(20) << (member) << setw(52)
 
-static const float UNKNOWN_WEIGHT = -1;
-static const float KILOS_IN_A_POUND = 0.453592;
-static const float SLUGS_IN_A_POUND = 0.031081;
-static const string POUND_LABEL = "Pound";
-static const string KILO_LABEL = "Kilo";
-static const string SLUG_LABEL = "Slug";
+const float Weight::UNKNOWN_WEIGHT = -1;
+const float Weight::KILOS_IN_A_POUND = 0.453592;
+const float Weight::SLUGS_IN_A_POUND = 0.031081;
+const string POUND_LABEL = "Pound";
+const string KILO_LABEL = "Kilo";
+const string SLUG_LABEL = "Slug";
 
 Weight::Weight() noexcept {
     bIsKnown = false;

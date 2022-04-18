@@ -63,9 +63,9 @@ class Weight {
         void setMaxWeight(float newMaxWeight);
 
         /*private attributes*/
-        bool bIsKnown = false;
-        bool bHasMax = false;
-        enum UnitOfWeight unitOfWeight = POUND;
-        float weight {};
-        float maxWeight {};
+        bool bIsKnown;
+        bool bHasMax;
+        enum UnitOfWeight unitOfWeight;
+        float weight;
+        float maxWeight;
 };
