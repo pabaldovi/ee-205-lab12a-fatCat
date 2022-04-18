@@ -11,8 +11,8 @@
 
 #pragma once
 
-
 #include <string>
+#include <ostream>
 
 class Weight {
     public:
