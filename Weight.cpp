@@ -1,0 +1,11 @@
+///////////////////////////////////////////////////////////////////////////////
+///         University of Hawaii, College of Engineering
+/// @brief  ee-205-lab12a-fatCat - EE 205 - Spr 2022
+///
+/// @file Weight.cpp
+/// @version 1.0
+///
+/// @author Paulo Baldovi <pbaldovi@hawaii.edu>
+/// @date   17_Apr_2022
+///////////////////////////////////////////////////////////////////////////////
+#include "Weight.h"
