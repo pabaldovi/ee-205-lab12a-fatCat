@@ -23,36 +23,42 @@ int main() {
     assert(test0.isWeightKnown() == false);
     assert(test0.hasMaxWeight() == false);
     assert(test0.getWeightUnit() == Weight::POUND);
+    test0.dump();
 
     Weight test1 = Weight(1.1);
     assert(test1.isWeightKnown());
-    assert(test1.getWeight() == 1.1);
+    assert(test1.getWeight() == float(1.1));
 
     Weight test2 = Weight(Weight::KILO);
     assert(test2.getWeightUnit() == Weight::KILO);
+    test2.dump();
 
     Weight test3 = Weight(2.2,Weight::SLUG);
     assert(test3.isWeightKnown());
-    assert(test3.getWeight() == 2.2);
+    assert(test3.getWeight() == float(2.2));
     assert(test3.getWeightUnit() == Weight::SLUG);
+    test3.dump();
 
     Weight test4 = Weight(3.3, 4.4);
     assert(test4.isWeightKnown());
-    assert(test4.getWeight() == 3.3);
+    assert(test4.getWeight() == float(3.3));
     assert(test4.hasMaxWeight());
-    assert(test4.getMaxWeight() == 4.4);
+    assert(test4.getMaxWeight() == float(4.4));
+    test4.dump();
 
     Weight test5 = Weight(Weight::KILO, 5.5);
-    assert(test2.getWeightUnit() == Weight::KILO);
-    assert(test4.hasMaxWeight());
-    assert(test4.getMaxWeight() == 5.5);
+    assert(test5.getWeightUnit() == Weight::KILO);
+    assert(test5.hasMaxWeight());
+    assert(test5.getMaxWeight() == float(5.5));
+    test5.dump();
 
     Weight test6 = Weight(6.6, Weight::SLUG, 7.7);
-    assert(test1.isWeightKnown());
-    assert(test1.getWeight() == 6.6);
-    assert(test3.getWeightUnit() == Weight::SLUG);
-    assert(test4.hasMaxWeight());
-    assert(test4.getMaxWeight() == 7.7);
+    assert(test6.isWeightKnown());
+    assert(test6.getWeight() == float(6.6));
+    assert(test6.getWeightUnit() == Weight::SLUG);
+    assert(test6.hasMaxWeight());
+    assert(test6.getMaxWeight() == float(7.7));
+    test6.dump();
 
     cout << endl << "Done with " << PROGRAM_NAME << endl;
     return 0;
