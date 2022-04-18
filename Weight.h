@@ -58,6 +58,14 @@ class Weight {
         static const std::string KILO_LABEL;
         static const std::string SLUG_LABEL;
 
+    private:
+        /*private member functions*/
+        void setMaxWeight(float newMaxWeight);
 
-
+        /*private attributes*/
+        bool bIsKnown = false;
+        bool bHasMax = false;
+        enum UnitOfWeight unitOfWeight = POUND;
+        float weight {};
+        float maxWeight {};
 };
