@@ -15,11 +15,9 @@
 class Weight {
     public:
         /*public types*/
-
         enum UnitOfWeight {POUND, KILO, SLUG};
 
         /*public member functions*/
-
         Weight() noexcept;
         Weight(float newWeight);
         Weight(UnitOfWeight newUnitOfWeight) noexcept;
@@ -42,4 +40,12 @@ class Weight {
         bool operator== (const Weight &rhs_Weight) const;
         bool operator< (const Weight &rhs_Weight) const;
         Weight &operator+= (float rhs_addToWeight);
+
+        /*static public member functions*/
+        static float fromKilogramToPound(float kilogram) noexcept;
+        static float fromPoundToKilogram(float pound) noexcept;
+        static float fromSlugToPound(float slug) noexcept;
+        static float fromPoundToSlug(float pound) noexcept;
+        static float convertWeight(float fromWeight, UnitOfWeight fromUnit, UnitOfWeight toUnit) noexcept;
+
 };
